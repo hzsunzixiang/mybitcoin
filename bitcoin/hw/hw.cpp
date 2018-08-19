@@ -26,7 +26,7 @@
 
 #include <config/bitcoin-config.h>
 #include <hwmath.h>
-//#include <serialize.h>
+#include <serialize.h>
 
 int main(int argc, char **argv){
 	printf("version:%s\n", PACKAGE_VERSION);

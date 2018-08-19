@@ -60,6 +60,7 @@ AM_PROG_AR
 
 # 这是在 Autoconf 中使用 Libtool 唯一必须的宏
 AC_PROG_LIBTOOL
+#AX_CXX_COMPILE_STDCXX([11], [noext], [mandatory], [nodefault])
 
 # 或者
 #LT_INIT([static])
