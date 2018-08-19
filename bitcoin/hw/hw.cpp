@@ -21,37 +21,32 @@
  */
 
 #include <stdio.h>
+#include <string>
+#include <iostream>
 
 #include <cli.h>
 
 #include <config/bitcoin-config.h>
 #include <hwmath.h>
 #include <serialize.h>
+#include <streams.h>
+#include <tx.h>
+#include <utilstrencodings.h>
+using namespace std;
+
+std::string EncodeHexTx(const COutPoint& tx, const int serializeFlags)
+{
+    //CDataStream ssTx(SER_NETWORK, PROTOCOL_VERSION | serializeFlags);
+    CDataStream ssTx(SER_NETWORK, serializeFlags);
+    ssTx << tx;
+    return HexStr(ssTx.begin(), ssTx.end());
+}
 
 int main(int argc, char **argv){
 	printf("version:%s\n", PACKAGE_VERSION);
-    double result = 0, retcode;
-    double *tmp = NULL;
-    int i;
+    COutPoint x(0x12345678);
 
-    retcode = parse_float_array(argc, argv, &tmp);
-    if(retcode || NULL == tmp){
-        if(retcode>=128){
-            int idx = retcode-128;
-            printf("Error in argument `%s' at position %d\n", argv[idx], idx);
-        }
-        printf("Error parsing command line.\nExiting.\n");
-        return 1;
-    }
-
-    result = average(argc-1, tmp);
-
-    printf("Your array is: ");
-    for(i=0; i<argc-1; i++){
-        printf("%g ", tmp[i]);
-    }
-    printf("\n");
-
-    printf("This is the average of the numbers in your array: %g\n", result);
+	string && str = EncodeHexTx(x, 0);
+    cout << str << endl;
     return 0;
 }

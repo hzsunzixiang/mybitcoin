@@ -3,7 +3,9 @@ bin_PROGRAMS = hw
 
 # Defines which source files are used to produce the specificed
 # executable.
-hw_SOURCES = cli.cpp hw.cpp
+hw_SOURCES = cli.cpp hw.cpp \
+  support/lockedpool.cpp \
+  support/cleanse.cpp
 
 # Defines flags for the C preprocessor *specific to ``hw``*.
 # hw_CPPLFAGS = 
