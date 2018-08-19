@@ -56,12 +56,12 @@ inline uint32_t htobe32(uint32_t host_32bits)
 }
 #endif // HAVE_DECL_HTOBE32
 
-#if HAVE_DECL_HTOLE32 == 0
+//#if HAVE_DECL_HTOLE32 == 0
 inline uint32_t htole32(uint32_t host_32bits)
 {
     return bswap_32(host_32bits);
 }
-#endif // HAVE_DECL_HTOLE32
+//#endif // HAVE_DECL_HTOLE32
 
 #if HAVE_DECL_BE32TOH == 0
 inline uint32_t be32toh(uint32_t big_endian_32bits)
@@ -142,12 +142,12 @@ inline uint32_t htobe32(uint32_t host_32bits)
 }
 #endif // HAVE_DECL_HTOBE32
 
-#if HAVE_DECL_HTOLE32 == 0
+//#if HAVE_DECL_HTOLE32 == 0
 inline uint32_t htole32(uint32_t host_32bits)
 {
     return host_32bits;
 }
-#endif // HAVE_DECL_HTOLE32
+//#endif // HAVE_DECL_HTOLE32
 
 #if HAVE_DECL_BE32TOH == 0
 inline uint32_t be32toh(uint32_t big_endian_32bits)

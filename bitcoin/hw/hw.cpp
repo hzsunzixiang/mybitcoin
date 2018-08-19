@@ -34,6 +34,7 @@
 #include <utilstrencodings.h>
 using namespace std;
 
+std::string EncodeHexTx(const COutPoint& tx, const int serializeFlags = 0);
 std::string EncodeHexTx(const COutPoint& tx, const int serializeFlags)
 {
     //CDataStream ssTx(SER_NETWORK, PROTOCOL_VERSION | serializeFlags);
@@ -46,7 +47,8 @@ int main(int argc, char **argv){
 	printf("version:%s\n", PACKAGE_VERSION);
     COutPoint x(0x12345678);
 
-	string && str = EncodeHexTx(x, 0);
+	//string && str = EncodeHexTx(x, 0);
+	string && str = EncodeHexTx(x);
     cout << str << endl;
     return 0;
 }
