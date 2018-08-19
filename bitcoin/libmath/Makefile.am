@@ -11,7 +11,7 @@ noinst_LTLIBRARIES = libhwmath.la
 # 用这个报上名的错误
 #bin_LTLIBRARIES = libhwmath.la
 
-libhwmath_la_SOURCES = hwmath.c
+libhwmath_la_SOURCES = hwmath.cpp
 
 libhwmath_la_LIBADD = 
 

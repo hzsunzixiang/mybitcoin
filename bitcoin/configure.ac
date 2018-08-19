@@ -5,13 +5,13 @@
 ## Preamble - used to set up meta paths, meta-information, etc.
 #
 # require a minimum version of AutoConf
-AC_PREREQ([2.65])
+AC_PREREQ([2.69])
 
 # software name, version, contact address
 AC_INIT([hw],[1.0.0],[foo.bar@example.com])
 
 # if this file does not exist, `configure` was invoked in the wrong directory
-AC_CONFIG_SRCDIR([hw/hw.c])
+AC_CONFIG_SRCDIR([hw/hw.cpp])
 
 # directories (relative to top-level) to look into for AutoConf/AutoMake files
 #AC_CONFIG_AUX_DIR([build-aux])
@@ -22,6 +22,8 @@ AM_INIT_AUTOMAKE([-Wall -Werror foreign])
 # all defined C macros (HAVE_*) will be saved to this file
 AC_CONFIG_HEADERS([config.h])
 
+# AC_CONFIG_HEADERS([src/config/bitcoin-config.h])
+
 # Macros for the compilers. Check
 # http://www.gnu.org/savannah-checkouts/gnu/autoconf/manual/autoconf-2.69/html_node/Compilers-and-Preprocessors.html#Compilers-and-Preprocessors
 # for a full list
@@ -29,6 +31,9 @@ AC_CONFIG_HEADERS([config.h])
 # This macro checks if you have a C compiler
 AC_PROG_CC
 AM_PROG_CC_C_O
+
+#The usual way to define `CXX' is to add `AC_PROG_CXX'
+AC_PROG_CXX
 
 # Check if the `install` program is present
 AC_PROG_INSTALL
