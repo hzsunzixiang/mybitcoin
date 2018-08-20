@@ -28,12 +28,12 @@ inline uint16_t htobe16(uint16_t host_16bits)
 }
 #endif // HAVE_DECL_HTOBE16
 
-#if HAVE_DECL_HTOLE16 == 0
+//#if HAVE_DECL_HTOLE16 == 0
 inline uint16_t htole16(uint16_t host_16bits)
 {
     return bswap_16(host_16bits);
 }
-#endif // HAVE_DECL_HTOLE16
+//#endif // HAVE_DECL_HTOLE16
 
 #if HAVE_DECL_BE16TOH == 0
 inline uint16_t be16toh(uint16_t big_endian_16bits)
@@ -84,12 +84,12 @@ inline uint64_t htobe64(uint64_t host_64bits)
 }
 #endif // HAVE_DECL_HTOBE64
 
-#if HAVE_DECL_HTOLE64 == 0
+//#if HAVE_DECL_HTOLE64 == 0
 inline uint64_t htole64(uint64_t host_64bits)
 {
     return bswap_64(host_64bits);
 }
-#endif // HAVE_DECL_HTOLE64
+//#endif // HAVE_DECL_HTOLE64
 
 #if HAVE_DECL_BE64TOH == 0
 inline uint64_t be64toh(uint64_t big_endian_64bits)
@@ -114,12 +114,12 @@ inline uint16_t htobe16(uint16_t host_16bits)
 }
 #endif // HAVE_DECL_HTOBE16
 
-#if HAVE_DECL_HTOLE16 == 0
+//#if HAVE_DECL_HTOLE16 == 0
 inline uint16_t htole16(uint16_t host_16bits)
 {
     return host_16bits;
 }
-#endif // HAVE_DECL_HTOLE16
+//#endif // HAVE_DECL_HTOLE16
 
 #if HAVE_DECL_BE16TOH == 0
 inline uint16_t be16toh(uint16_t big_endian_16bits)
@@ -170,12 +170,12 @@ inline uint64_t htobe64(uint64_t host_64bits)
 }
 #endif // HAVE_DECL_HTOBE64
 
-#if HAVE_DECL_HTOLE64 == 0
+//#if HAVE_DECL_HTOLE64 == 0
 inline uint64_t htole64(uint64_t host_64bits)
 {
     return host_64bits;
 }
-#endif // HAVE_DECL_HTOLE64
+//#endif // HAVE_DECL_HTOLE64
 
 #if HAVE_DECL_BE64TOH == 0
 inline uint64_t be64toh(uint64_t big_endian_64bits)

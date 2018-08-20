@@ -40,6 +40,10 @@ std::string EncodeHexTx(const COutPoint& tx, const int serializeFlags)
     //CDataStream ssTx(SER_NETWORK, PROTOCOL_VERSION | serializeFlags);
     CDataStream ssTx(SER_NETWORK, serializeFlags);
     ssTx << tx;
+	// 这是序列化 简单类型
+	// 测试直接调用 serialize.h 中的序列化
+    ::Serialize(ssTx, 0x101111213);
+    ::Serialize(ssTx, (short)0x1011);
     return HexStr(ssTx.begin(), ssTx.end());
 }
 

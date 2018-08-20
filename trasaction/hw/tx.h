@@ -20,14 +20,19 @@ public:
     COutPoint(uint32_t x, uint32_t y): n(x), sht(y) { }
 
     ADD_SERIALIZE_METHODS;
+    //template<typename Stream> void Serialize(Stream& s) const { NCONST_PTR(this)->SerializationOp(s, CSerActionSerialize()); } 
+	//template<typename Stream> void Unserialize(Stream& s) { SerializationOp(s, CSerActionUnserialize()); };
 
-    template <typename Stream, typename Operation>
+    //template <typename Stream, typename Operation>
     //inline void SerializationOp(Stream& s, Operation ser_action) {
     //    READWRITE(n,sht);
     //}
+    template <typename Stream, typename Operation>
     inline void SerializationOp(Stream& s, Operation ser_action) {
         READWRITE(n);
         READWRITE(sht);
+        //(::SerReadWriteMany(s, ser_action, n));
+        //(::SerReadWriteMany(s, ser_action, sht));
     }
 
     std::string ToString() const{}
