@@ -45,7 +45,7 @@ std::string EncodeHexTx(const COutPoint& tx, const int serializeFlags)
 
 int main(int argc, char **argv){
 	printf("version:%s\n", PACKAGE_VERSION);
-    COutPoint x(0x12345678);
+    COutPoint x(0x12345678, 0x11112222);
 
 	//string && str = EncodeHexTx(x, 0);
 	string && str = EncodeHexTx(x);

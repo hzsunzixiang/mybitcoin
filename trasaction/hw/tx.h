@@ -13,15 +13,17 @@ class COutPoint
 {
 public:
     uint32_t n;
+    uint32_t sht;
 
     COutPoint(): n((uint32_t) -1) { }
     COutPoint(uint32_t x): n(x) { }
+    COutPoint(uint32_t x, uint32_t y): n(x), sht(y) { }
 
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
     inline void SerializationOp(Stream& s, Operation ser_action) {
-        READWRITE(n);
+        READWRITE(n,sht);
     }
 
     std::string ToString() const{}
