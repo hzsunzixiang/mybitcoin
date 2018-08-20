@@ -22,8 +22,12 @@ public:
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
+    //inline void SerializationOp(Stream& s, Operation ser_action) {
+    //    READWRITE(n,sht);
+    //}
     inline void SerializationOp(Stream& s, Operation ser_action) {
-        READWRITE(n,sht);
+        READWRITE(n);
+        READWRITE(sht);
     }
 
     std::string ToString() const{}

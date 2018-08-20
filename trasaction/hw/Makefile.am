@@ -12,7 +12,7 @@ hw_SOURCES = cli.cpp hw.cpp \
 
 # These are instead *default* flags, used by all the programs in
 # ``bin_PROGRAMS``.
-AM_CPPFLAGS = -std=c++11 -fpermissive  -I$(srcdir) -I$(top_srcdir)/libmath -I$(top_srcdir)/compat --save-temps
+AM_CPPFLAGS = -std=c++11 -O0 -fpermissive  -I$(srcdir) -I$(top_srcdir)/libmath -I$(top_srcdir)/compat --save-temps
 
 # Extra options for the linker.
 # hw_LDFLAGS = 
