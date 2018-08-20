@@ -81,6 +81,5 @@ AC_CHECK_FUNCS([floor pow sqrt])
 # create `Makefile`s but could also be used for scripts, include
 # files, etc.
 AC_CONFIG_FILES([Makefile
-                 hw/Makefile
-                 libmath/Makefile])
+                 hw/Makefile])
 AC_OUTPUT
