@@ -2,11 +2,7 @@
 #include <stdio.h>
 #include <string>
 #include <iostream>
-
-#include <cli.h>
-
 #include <config/bitcoin-config.h>
-#include <hwmath.h>
 #include <serialize.h>
 #include <streams.h>
 #include <tx.h>

@@ -3,7 +3,7 @@ bin_PROGRAMS = hw
 
 # Defines which source files are used to produce the specificed
 # executable.
-hw_SOURCES = cli.cpp hw.cpp \
+hw_SOURCES = hw.cpp \
   support/lockedpool.cpp \
   support/cleanse.cpp
 
@@ -26,4 +26,4 @@ AM_CPPFLAGS = -std=c++11 -O0 -fpermissive  -I$(srcdir) -I$(top_srcdir)/libmath -
 AM_LDFLAGS = -static
 
 # Libraries the ``hw`` binary will be linked to.
-hw_LDADD = $(top_srcdir)/libmath/libhwmath.la
+#hw_LDADD = $(top_srcdir)/libmath/libhwmath.la
