@@ -35,6 +35,11 @@ public:
         //(::SerReadWriteMany(s, ser_action, sht));
     }
 
-    std::string ToString() const{}
+    std::string ToString() const
+	{
+	    char tmp[100];
+		snprintf(tmp, 100, "COutPoint(0x%x, 0x%x)", n, sht);
+		return tmp;
+	}
 };
 
