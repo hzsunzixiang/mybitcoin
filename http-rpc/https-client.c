@@ -21,16 +21,8 @@
 #include <string.h>
 #include <errno.h>
 
-#ifdef _WIN32
-#include <winsock2.h>
-#include <ws2tcpip.h>
-
-#define snprintf _snprintf
-#define strcasecmp _stricmp 
-#else
 #include <sys/socket.h>
 #include <netinet/in.h>
-#endif
 
 #include <event2/bufferevent_ssl.h>
 #include <event2/bufferevent.h>
@@ -258,21 +250,6 @@ main(int argc, char **argv)
 		goto error;
 	}
 
-#ifdef _WIN32
-	{
-		WORD wVersionRequested;
-		WSADATA wsaData;
-		int err;
-
-		wVersionRequested = MAKEWORD(2, 2);
-
-		err = WSAStartup(wVersionRequested, &wsaData);
-		if (err != 0) {
-			printf("WSAStartup failed with error: %d\n", err);
-			goto error;
-		}
-	}
-#endif // _WIN32
 
 	http_uri = evhttp_uri_parse(url);
 	if (http_uri == NULL) {
@@ -486,10 +463,6 @@ cleanup:
 	CRYPTO_cleanup_all_ex_data();
 
 	sk_SSL_COMP_free(SSL_COMP_get_compression_methods());
-
-#ifdef _WIN32
-	WSACleanup();
-#endif
 
 	return ret;
 }
