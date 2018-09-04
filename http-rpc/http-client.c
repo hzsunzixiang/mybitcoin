@@ -41,6 +41,7 @@ http_request_done(struct evhttp_request *req, void *ctx)
 		/* If req is NULL, it means an error occurred, but
 		 * sadly we are mostly left guessing what the error
 		 * might have been.  We'll do our best... */
+		// 这里ctx可以传个变量 把结果保存进去
 		//struct bufferevent *bev = (struct bufferevent *) ctx;
 		fprintf(stderr, "some request failed - no idea which one though!\n");
 		return;
