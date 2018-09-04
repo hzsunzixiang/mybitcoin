@@ -254,7 +254,7 @@ main(int argc, char **argv)
 		goto error;
 	}
 
-	// epoll_wait 得以调用回调函数
+	// epoll_wait 得以调用回调函数, 如果没有这一句， 那么回调将得不到调用，也就是在这理epoll_wait 等待结果返回及处理完毕
 	event_base_dispatch(base);
 	goto cleanup;
 
@@ -266,5 +266,9 @@ cleanup:
 	if (http_uri)
 		evhttp_uri_free(http_uri);
 	event_base_free(base);
+
+	printf("we enter here, continue deal with something\n");
+
+
 	return ret;
 }
