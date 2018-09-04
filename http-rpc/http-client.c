@@ -46,9 +46,9 @@ http_request_done(struct evhttp_request *req, void *ctx)
 		return;
 	}
 
-	//fprintf(stderr, "Response line: %d %s\n",
-	//    evhttp_request_get_response_code(req),
-	//    evhttp_request_get_response_code_line(req));
+	fprintf(stderr, "Response line: %d %s\n",
+	    evhttp_request_get_response_code(req),
+	    evhttp_request_get_response_code_line(req));
 
 	while ((nread = evbuffer_remove(evhttp_request_get_input_buffer(req),
 		    buffer, sizeof(buffer)))
@@ -177,7 +177,7 @@ main(int argc, char **argv)
 	}
 	uri[sizeof(uri) - 1] = '\0';
 
-	// Create event base
+	// Create event base //调用 epoll_create1
 	base = event_base_new();
 	if (!base) {
 		perror("event_base_new()");
@@ -210,7 +210,7 @@ main(int argc, char **argv)
 		evhttp_connection_set_timeout(evcon, timeout);
 	}
 
-	// Fire off the request
+	// Fire off the request 注册回调 
 	req = evhttp_request_new(http_request_done, bev);
 	if (req == NULL) {
 		fprintf(stderr, "evhttp_request_new() failed\n");
@@ -245,12 +245,16 @@ main(int argc, char **argv)
 		fclose(f);
 	}
 
+	// 真正发送请求的地方 
+	//socket connect epoll_ctl
+
 	r = evhttp_make_request(evcon, req, data_file ? EVHTTP_REQ_POST : EVHTTP_REQ_GET, uri);
 	if (r != 0) {
 		fprintf(stderr, "evhttp_make_request() failed\n");
 		goto error;
 	}
 
+	// epoll_wait 得以调用回调函数
 	event_base_dispatch(base);
 	goto cleanup;
 
