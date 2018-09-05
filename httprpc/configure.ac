@@ -8,10 +8,10 @@
 AC_PREREQ([2.69])
 
 # software name, version, contact address
-AC_INIT([hw],[1.0.0],[foo.bar@example.com])
+AC_INIT([httprpc],[1.0.0],[foo.bar@example.com])
 
 # if this file does not exist, `configure` was invoked in the wrong directory
-AC_CONFIG_SRCDIR([hw/hw.cpp])
+#AC_CONFIG_SRCDIR([hw/hw.cpp])
 
 # directories (relative to top-level) to look into for AutoConf/AutoMake files
 #AC_CONFIG_AUX_DIR([build-aux])
@@ -76,11 +76,11 @@ AC_TYPE_SIZE_T
 # Checks for library functions.
 AC_FUNC_MALLOC
 AC_FUNC_REALLOC
-AC_CHECK_FUNCS([floor pow sqrt])
+#AC_CHECK_FUNCS([floor pow sqrt])
 
 # Substitute all conditionals in these files; this is normally used to
 # create `Makefile`s but could also be used for scripts, include
 # files, etc.
 AC_CONFIG_FILES([Makefile
-                 hw/Makefile])
+                 httprpc/Makefile])
 AC_OUTPUT

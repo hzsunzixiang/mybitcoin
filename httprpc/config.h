@@ -4,9 +4,6 @@
 /* Define to 1 if you have the <dlfcn.h> header file. */
 #define HAVE_DLFCN_H 1
 
-/* Define to 1 if you have the `floor' function. */
-/* #undef HAVE_FLOOR */
-
 /* Define to 1 if you have the <inttypes.h> header file. */
 #define HAVE_INTTYPES_H 1
 
@@ -17,15 +14,9 @@
 /* Define to 1 if you have the <memory.h> header file. */
 #define HAVE_MEMORY_H 1
 
-/* Define to 1 if you have the `pow' function. */
-/* #undef HAVE_POW */
-
 /* Define to 1 if your system has a GNU libc compatible `realloc' function,
    and to 0 otherwise. */
 #define HAVE_REALLOC 1
-
-/* Define to 1 if you have the `sqrt' function. */
-/* #undef HAVE_SQRT */
 
 /* Define to 1 if you have the <stdint.h> header file. */
 #define HAVE_STDINT_H 1
@@ -55,19 +46,19 @@
 #define LT_OBJDIR ".libs/"
 
 /* Name of package */
-#define PACKAGE "hw"
+#define PACKAGE "httprpc"
 
 /* Define to the address where bug reports for this package should be sent. */
 #define PACKAGE_BUGREPORT "foo.bar@example.com"
 
 /* Define to the full name of this package. */
-#define PACKAGE_NAME "hw"
+#define PACKAGE_NAME "httprpc"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "hw 1.0.0"
+#define PACKAGE_STRING "httprpc 1.0.0"
 
 /* Define to the one symbol short name of this package. */
-#define PACKAGE_TARNAME "hw"
+#define PACKAGE_TARNAME "httprpc"
 
 /* Define to the home page for this package. */
 #define PACKAGE_URL ""

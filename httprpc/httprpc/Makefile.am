@@ -1,9 +1,9 @@
 # Defines which program executables will be produced.
-bin_PROGRAMS = hw
+bin_PROGRAMS = httprpc 
 
 # Defines which source files are used to produce the specificed
 # executable.
-hw_SOURCES =  hw.cpp \
+httprpc_SOURCES =  hw.cpp \
   support/lockedpool.cpp \
   support/cleanse.cpp
 
