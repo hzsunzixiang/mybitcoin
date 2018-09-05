@@ -18,7 +18,10 @@ AC_CONFIG_SRCDIR([hw/hw.cpp])
 #AC_CONFIG_MACRO_DIR([build-aux])
 # enable AutoMake
 #AM_INIT_AUTOMAKE([1.10])
-AM_INIT_AUTOMAKE([-Wall -Werror foreign])
+#AM_INIT_AUTOMAKE([subdir-objects])
+# https://github.com/aria2/aria2/issues/120
+# Make automake 1.14 shut-up about `subdir-objects`
+AM_INIT_AUTOMAKE([-Wall -Werror foreign subdir-objects])
 # all defined C macros (HAVE_*) will be saved to this file
 AC_CONFIG_HEADERS([config.h])
 
@@ -76,6 +79,7 @@ AC_TYPE_SIZE_T
 AC_FUNC_MALLOC
 AC_FUNC_REALLOC
 AC_CHECK_FUNCS([floor pow sqrt])
+
 
 # Substitute all conditionals in these files; this is normally used to
 # create `Makefile`s but could also be used for scripts, include
