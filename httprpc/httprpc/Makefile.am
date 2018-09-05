@@ -3,7 +3,7 @@ bin_PROGRAMS = httprpc
 
 # Defines which source files are used to produce the specificed
 # executable.
-httprpc_SOURCES =  hw.cpp \
+httprpc_SOURCES =  httprpc.cpp \
   support/lockedpool.cpp \
   support/cleanse.cpp
 
