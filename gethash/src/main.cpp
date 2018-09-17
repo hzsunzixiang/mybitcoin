@@ -43,7 +43,8 @@ std::string DecodeHexTx(const COutPoint& tx, const int serializeFlags)
 	
 }
 
-int main(int argc, char **argv){
+int testDecode(int argc, char **argv)
+{
 	printf("version:%s\n", PACKAGE_VERSION);
     COutPoint x(0x12345678, 0xabcdefac);
 
@@ -52,3 +53,13 @@ int main(int argc, char **argv){
     cout << str << endl;
     return 0;
 }
+int main(int argc, char **argv)
+{
+	CHashWriter ss(SER_GETHASH, 0);
+	ss << 0x1000000;
+	ss.GetHash();
+    cout << HexStr(ss.GetHash()) << endl;
+
+	return 0;
+}
+
