@@ -8,10 +8,10 @@
 AC_PREREQ([2.69])
 
 # software name, version, contact address
-AC_INIT([hw],[1.0.0],[foo.bar@example.com])
+AC_INIT([src],[1.0.0],[foo.bar@example.com])
 
 # if this file does not exist, `configure` was invoked in the wrong directory
-AC_CONFIG_SRCDIR([hw/hw.cpp])
+#AC_CONFIG_SRCDIR([src/main.cpp])
 
 # directories (relative to top-level) to look into for AutoConf/AutoMake files
 #AC_CONFIG_AUX_DIR([build-aux])
@@ -40,7 +40,7 @@ AC_PROG_CXX
 AC_PROG_INSTALL
 
 #automake: warnings are treated as errors
-#/usr/share/automake-1.14/am/ltlibrary.am: warning: 'libhwmath.la': linking libtool libraries using a non-POSIX
+#/usr/share/automake-1.14/am/ltlibrary.am: warning: 'xxxx.la': linking libtool libraries using a non-POSIX
 #/usr/share/automake-1.14/am/ltlibrary.am: archiver requires 'AM_PROG_AR' in 'configure.ac'
 # 上面是缺少这个的后果 
 AM_PROG_AR
@@ -82,6 +82,5 @@ AC_CHECK_FUNCS([floor pow sqrt])
 # create `Makefile`s but could also be used for scripts, include
 # files, etc.
 AC_CONFIG_FILES([Makefile
-                 hw/Makefile
-                 libmath/Makefile])
+                 src/Makefile])
 AC_OUTPUT
