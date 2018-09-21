@@ -1,3 +1,3 @@
 # src/Makefile.am
 # recursively process `Makefile.am` in these subdirectories
-SUBDIRS = hw
+SUBDIRS = src
