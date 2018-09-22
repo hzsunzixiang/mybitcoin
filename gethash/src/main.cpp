@@ -57,9 +57,13 @@ int main(int argc, char **argv)
 {
 	CHashWriter ss(SER_GETHASH, 0);
 	ss << 0x1000000;
-	ss.GetHash();
     cout << HexStr(ss.GetHash()) << endl;
 
 	return 0;
 }
+//结果符合
+// printf "00000001" |xxd -r -p |sha256sum -b |xxd -r -p |sha256sum -b
+//ericksun@192.168.56.101:~/mybitcoin/gethash/src$ printf "00000001" |xxd -r -p |sha256sum -b |xxd -r -p |sha256sum -b
+	//fcb88451969c719dad97e8ccf435a72b60b4f9310a3073e6df11ba7dd14e6573 *-
+
 
